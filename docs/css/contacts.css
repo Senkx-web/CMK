@@ -1,0 +1,199 @@
+.contacts {
+  padding-block: 60px 0;
+}
+
+@media (min-width: 900px) {
+  .contacts {
+    padding-block: 100px 0;
+  }
+}
+
+.contacts_grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 535px) 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contacts_grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .speed_text {
+    right: 0%;
+  }
+}
+
+.city_picker {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.place {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 30px;
+  border: 1px solid #e2fc04;
+  border-radius: 15px;
+  background: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 410px;
+  min-height: 60px;
+  justify-content: space-between;
+  transition: border-radius 0.15s ease;
+}
+
+.city_picker.is_open .place {
+  border-radius: 15px 15px 0 0;
+}
+
+.city_picker.is_open .triangle_down {
+  rotate: 180deg;
+}
+
+.city_list {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #121314;
+  border: 1px solid #e2fc04;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.city_list[hidden] {
+  display: none;
+}
+
+.city_list button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.city_list button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.city_list button.is_on {
+  color: #e2fc04;
+}
+
+@media (max-width: 460px) {
+  .place {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.place_city {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map_icon {
+  width: 14px;
+  height: 17px;
+}
+
+.triangle_down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #e2fc04;
+}
+
+.contact_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+}
+
+.contact:first-child {
+  padding-top: 0;
+}
+
+.contact:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact_icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #8c8c8c;
+  color: #e2fc04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #121314;
+}
+
+.contact strong {
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contact span {
+  color: #8c8c8c;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.map_wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.map {
+  min-width: 0;
+  width: 100%;
+  border-radius: 20px;
+
+  object-fit: cover;
+  display: block;
+}
+
+.map_link {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  width: 38px;
+  height: 46px;
+  z-index: 1;
+}
+.map_link img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
