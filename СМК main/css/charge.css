@@ -1,0 +1,91 @@
+.charge {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .charge {
+    min-height: 600px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .charge {
+    min-height: 800px;
+  }
+}
+
+.charge_photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: opacity 0.25s ease;
+}
+
+.charge_photo.is_changing {
+  opacity: 0;
+}
+
+.charge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, transparent 62%), rgba(0, 0, 0, 0.2);
+}
+
+.charge_text {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  max-width: 722px;
+}
+
+@media (min-width: 900px) {
+  .charge_text {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .charge_text {
+    font-size: 48px;
+  }
+}
+
+.dots {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  translate: -50% 0;
+  display: flex;
+  gap: 8px;
+}
+
+.dot_button {
+  width: 33px;
+  height: 14px;
+  padding: 0;
+  border: none;
+  border-radius: 50px;
+  background: rgba(217, 217, 217, 0.27);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.dot_button:hover {
+  background: rgba(217, 217, 217, 0.5);
+}
+
+.dot_button.is_on {
+  width: 14px;
+  background: #d9d9d9;
+}

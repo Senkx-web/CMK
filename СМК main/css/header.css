@@ -1,0 +1,172 @@
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+.header_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 120px;
+  padding-block: 18px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.logo_name {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  font-family: "Benguiat", "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.05;
+  text-shadow: 0 12px 51px rgba(15, 89, 3, 0.1);
+}
+
+.logo_name img {
+  width: 120px;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1400px) {
+  .menu {
+    gap: 65px;
+  }
+}
+
+.menu a {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  color: #e2fc04;
+}
+
+.phones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (min-width: 1400px) {
+  .phones {
+    gap: 32px;
+  }
+}
+
+.phones a {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.phones a:hover {
+  color: #e2fc04;
+}
+
+.menu .phones {
+  display: none;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.burger.is_open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.is_open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is_open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 1550px) {
+  .burger {
+    display: flex;
+  }
+
+  .phones_desktop {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #121314;
+    border-top: 1px solid rgba(140, 140, 140, 0.5);
+    padding: 10px 20px 20px;
+  }
+
+  .menu.is_open {
+    display: flex;
+  }
+
+  .menu a {
+    padding-block: 14px;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  }
+
+  .menu .phones {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4px;
+  }
+
+  .menu .phones a {
+    padding-block: 14px;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  }
+
+  .menu .phones a:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+  .menu {
+    padding: 10px 50px 20px;
+  }
+}

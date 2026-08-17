@@ -1,0 +1,47 @@
+.not_found {
+  padding-block: 100px 140px;
+  text-align: center;
+}
+
+.not_found_code {
+  font-family: "Benguiat", "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  color: #121314;
+  text-shadow:
+    -1px -1px 0 rgba(140, 140, 140, 0.5),
+    1px -1px 0 rgba(140, 140, 140, 0.5),
+    -1px 1px 0 rgba(140, 140, 140, 0.5),
+    1px 1px 0 rgba(140, 140, 140, 0.5);
+}
+
+@media (min-width: 900px) {
+  .not_found_code {
+    font-size: 120px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .not_found_code {
+    font-size: 160px;
+  }
+}
+
+.not_found p {
+  color: #8c8c8c;
+  margin-block: 16px 30px;
+}
+
+.not_found .menu {
+  display: flex;
+  position: static;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.not_found .menu a {
+  border-bottom: none;
+}
